@@ -9,6 +9,7 @@ const app = express();
 app.use(express.json());
 app.use("/api/sensor-data", sensorDataRoutes);
 
+// initialize typeorm
 AppDataSource.initialize()
 	.then(() => {
 		console.log("Database connected");
