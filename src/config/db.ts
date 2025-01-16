@@ -1,5 +1,6 @@
 import { DataSource } from "typeorm";
 import { SensorData } from "../models/sensorDataModel";
+import { User } from "../models/userModel";
 
 const AppDataSource = new DataSource({
 	type: "postgres",
@@ -10,7 +11,7 @@ const AppDataSource = new DataSource({
 	database: process.env.DB_NAME || "sensordb",
 	synchronize: true, // Use true only for development
 	logging: false,
-	entities: [SensorData],
+	entities: [SensorData, User],
 });
 
 export default AppDataSource;
